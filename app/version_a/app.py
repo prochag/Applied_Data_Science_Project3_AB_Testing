@@ -8,7 +8,7 @@ import sys, time
 from pathlib import Path
 from shiny import App, ui, render, reactive
 
-sys.path.append(str(Path(__file__).parent.parent))
+sys.path.append(str(Path(__file__).parent))
 from logger import log_session
 from movies import MOODS, GENRES, LENGTH_LABELS, ERA_LABELS, recommend
 
@@ -396,8 +396,8 @@ def server(input, output, session):
         # ── Step 5 ──────────────────────────────────────────
         elif s == 5:
             chosen = pick.get()
-            from movies import MOVIES as ALL
-            movie = next((m for m in ALL if m["title"] == chosen), None)
+            from movies import MOVIES as ALL_MOVIES
+            movie = next((m for m in ALL_MOVIES if m["title"] == chosen), None)
             if not movie:
                 return ui.HTML("<p>Error. <button onclick='goBack(4)'>Go back</button></p>")
 
@@ -429,7 +429,25 @@ def server(input, output, session):
                 </div>
             """)
 
-    async def _end():
+    logged = reactive.value(False)
+
+    @reactive.effect
+    def _on_done():
+        try:
+            if not input.js_done() or logged.get():
+                return
+        except:
+            return
+        logged.set(True)
+        elapsed = time.time() - t0
+        try: n = len(genres.get())
+        except: n = 0
+        log_session("A", elapsed, max_step.get(), max_step.get()>=5,
+                    n, mood.get() or "none", bool(pick.get()))
+
+    def _end():
+        if logged.get():
+            return
         elapsed = time.time() - t0
         try: n = len(genres.get())
         except: n = 0

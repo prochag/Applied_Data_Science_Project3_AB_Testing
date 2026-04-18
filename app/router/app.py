@@ -6,8 +6,8 @@
 
 from shiny import App, ui
 
-URL_A = "https://YOUR_ACCOUNT.shinyapps.io/version_a"
-URL_B = "https://YOUR_ACCOUNT.shinyapps.io/version_b"
+URL_A = "https://prochag.shinyapps.io/version_a/"
+URL_B = "https://prochag.shinyapps.io/version_b/"
 
 app_ui = ui.page_fluid(
     ui.tags.head(

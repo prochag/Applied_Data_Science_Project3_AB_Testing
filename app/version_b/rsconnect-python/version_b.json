@@ -1,0 +1,12 @@
+{
+    "https://api.shinyapps.io": {
+        "server_url": "https://api.shinyapps.io",
+        "filename": "/Users/pablor/Applied_Data_Science_Project3_AB_Testing/app/version_b",
+        "app_url": "https://prochag.shinyapps.io/version_b/",
+        "app_id": "17166927",
+        "app_guid": null,
+        "title": "version_b",
+        "app_mode": "python-shiny",
+        "app_store_version": 1
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "https://api.shinyapps.io": {
+        "server_url": "https://api.shinyapps.io",
+        "filename": "/Users/pablor/Applied_Data_Science_Project3_AB_Testing/app/router",
+        "app_url": "https://prochag.shinyapps.io/router/",
+        "app_id": "17166857",
+        "app_guid": null,
+        "title": "router",
+        "app_mode": "python-shiny",
+        "app_store_version": 1
+    }
+}
