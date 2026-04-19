@@ -1,4 +1,4 @@
-# Project 3: A/B Testing — Movie Night Recommendation Quiz
+# GR5243 Applied Data Science Project 3: A/B Testing — Movie Night Recommendation Quiz
 
 ## Research Question
 Does a polished, animated UI (Version B) lead to higher quiz completion rates and deeper engagement compared to a plain UI (Version A) in a 5-step interactive recommendation quiz?
@@ -24,7 +24,7 @@ Does a polished, animated UI (Version B) lead to higher quiz completion rates an
 | `mood_selection` | Which mood was chosen |
 
 
-## Set Up Details (for purposes of reproducing this test)
+## Set Up (for purposes of reproducing this test)
 
 1. Create Google Sheet with tab named `logs` and headers:
    `session_id, group, timestamp, time_on_page, steps_completed, reached_step5, genre_selections, mood_selection, made_final_pick`
@@ -39,7 +39,7 @@ Does a polished, animated UI (Version B) lead to higher quiz completion rates an
 5. Update `URL_A` and `URL_B` in `app/router/app.py`, redeploy router
 6. Share: `https://YOUR_ACCOUNT.shinyapps.io/router`
 
-## Run analysis
+## Running analysis
 ```bash
 # Set SHEET_ID in analysis/analysis.py first
 python analysis/analysis.py
