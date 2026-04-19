@@ -23,27 +23,9 @@ Does a polished, animated UI (Version B) lead to higher quiz completion rates an
 | `genre_selections` | Number of genres selected |
 | `mood_selection` | Which mood was chosen |
 
-## Structure
-```
-project3-ab-test/
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── app/
-│   ├── logger.py        ← paste your Apps Script URL here
-│   ├── movies.py        ← shared dataset + recommendation logic
-│   ├── version_a/app.py ← Control: plain quiz
-│   ├── version_b/app.py ← Treatment: polished quiz
-│   └── router/app.py    ← random assignment (share this URL)
-└── analysis/
-    └── analysis.py      ← paste your Sheet ID here
-```
 
-## Setup & Deploy
+## Set Up Details (for purposes of reproducing this test)
 
-See the full step-by-step guide in the project instructions.
-
-Quick summary:
 1. Create Google Sheet with tab named `logs` and headers:
    `session_id, group, timestamp, time_on_page, steps_completed, reached_step5, genre_selections, mood_selection, made_final_pick`
 2. Deploy Google Apps Script → paste URL into `app/logger.py`
